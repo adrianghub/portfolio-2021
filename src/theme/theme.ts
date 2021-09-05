@@ -19,7 +19,7 @@ const baseTheme = {
 const lightTheme = createTheme({
   palette: {
     background: {
-      default: "#DEBA9D",
+      default: "#EDE4DA",
     },
     primary: {
       main: "#9E7777",
@@ -38,11 +38,6 @@ const lightTheme = createTheme({
       disabledBackground: "rgb(150,150,150)",
     },
   },
-  backgroundSecondary: {
-    bg: "#6F4C5B",
-    text: "rgb(230,230,230) ",
-  },
-  logoColor: "#6F4C5B",
   ...baseTheme,
 });
 
@@ -68,7 +63,6 @@ const darkTheme = createTheme({
       disabledBackground: "rgb(150,150,150)",
     },
   },
-  logoColor: "#6F4C5B",
   ...baseTheme,
 });
 
