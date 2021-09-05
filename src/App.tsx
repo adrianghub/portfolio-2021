@@ -1,6 +1,7 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
 import { Route } from "wouter";
 import { ThemeProvider } from "@material-ui/styles";
+import { CssBaseline } from "@material-ui/core";
 import ThemeContext from "./contexts/theme";
 import LoaderContext from "./contexts/loader";
 import { lightTheme, darkTheme } from "./theme/theme";
@@ -30,6 +31,7 @@ const App = () => {
       <ThemeContext.Provider value={{ isDarkMode, setIsDarkMode }}>
         <LoaderContext.Provider value={{ isLoading, setIsLoading }}>
           <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+            <CssBaseline />
             <Loader />
             <Route path="/" component={HomePage} />
           </ThemeProvider>

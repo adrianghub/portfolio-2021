@@ -1,12 +1,12 @@
+import React from "react";
 import { useMediaQuery, useTheme } from "@material-ui/core";
 import { motion } from "framer-motion";
-import React from "react";
-import HeaderBackground from "../components/Background";
+import HeaderBackground from "../components/HeaderBackground";
 import Home from "../components/Home";
 
 const HomePage = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const isMobile = useMediaQuery(theme.breakpoints.up("sm"));
 
   return (
     <motion.main
@@ -23,7 +23,7 @@ const HomePage = () => {
       {/* Skills */}
       {/* Projects */}
       {/* Contact */}
-      {!isMobile && <HeaderBackground />}
+      {isMobile && <HeaderBackground />}
     </motion.main>
   );
 };

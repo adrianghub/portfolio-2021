@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { makeStyles } from "@material-ui/core";
 import { motion } from "framer-motion";
-import Intro from "../assets/Intro";
+import Intro from "../assets/IntroDot";
 import LoaderContext from "../contexts/loader";
 import zIndex from "@material-ui/core/styles/zIndex";
 
@@ -17,17 +17,15 @@ const LoaderContainer = () => {
         x: "-100vw",
       }}
       transition={{
-        delay: 3.2,
+        delay: 4.2,
         duration: 0.3,
       }}
-      onAnimationComplete={(definition) => {
+      onAnimationComplete={() => {
         setIsLoading(false);
       }}
       className={classes.container}
     >
-      <div className={classes.content}>
-        <Intro width={250} />
-      </div>
+      <Intro />
     </motion.div>
   );
 };
@@ -42,10 +40,8 @@ const useStyles = makeStyles(() => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#0593FB",
+    backgroundColor: "#000",
     zIndex: zIndex.drawer + 1,
-  },
-  content: {
     margin: "0 auto",
   },
 }));
