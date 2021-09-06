@@ -1,10 +1,14 @@
 import React, { useContext, useEffect } from "react";
-import { Container, Typography, Button, makeStyles } from "@material-ui/core";
+import { Container, Typography, Button, makeStyles, Theme } from "@material-ui/core";
 import { motion, useAnimation } from "framer-motion";
 import loader from "../contexts/loader";
 import { Link } from "react-scroll";
 
-const useStyles = makeStyles((theme) => ({
+interface CustomTheme extends Theme {
+  navbarHeight: number;
+}
+
+const useStyles = makeStyles((theme: CustomTheme) => ({
   container: {
     minHeight: "100vh",
     display: "flex",

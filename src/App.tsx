@@ -8,6 +8,7 @@ import { lightTheme, darkTheme } from "./theme/theme";
 
 const Loader = lazy(() => import("./components/Loader"));
 const HomePage = lazy(() => import("./pages/HomePage"));
+const Navbar = lazy(() => import("./components/Navbar"));
 
 import "./App.css";
 
@@ -33,6 +34,7 @@ const App = () => {
           <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
             <CssBaseline />
             <Loader />
+            <Navbar />
             <Route path="/" component={HomePage} />
           </ThemeProvider>
         </LoaderContext.Provider>
