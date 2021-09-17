@@ -3,7 +3,7 @@ import { Switch, FormControlLabel } from "@material-ui/core";
 import ThemeContext from "../contexts/theme";
 
 interface DarkModeSwitcherProps {
-  onClose: () => void;
+  onClose?: () => void;
 }
 
 const DarkModeSwitcher: React.FC<DarkModeSwitcherProps> = ({ onClose }) => {

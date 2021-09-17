@@ -1,7 +1,7 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
 import { Route } from "wouter";
 import { ThemeProvider } from "@material-ui/styles";
-import { CssBaseline } from "@material-ui/core";
+import { CssBaseline, useMediaQuery, useTheme } from "@material-ui/core";
 import ThemeContext from "./contexts/theme";
 import LoaderContext from "./contexts/loader";
 import { lightTheme, darkTheme } from "./theme/theme";
@@ -11,10 +11,13 @@ const HomePage = lazy(() => import("./pages/HomePage"));
 const Navbar = lazy(() => import("./components/Navbar"));
 
 import "./App.css";
+import SocialMediaBar from "./components/SocialMediaBar";
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   useEffect(() => {
     if (
@@ -35,6 +38,7 @@ const App = () => {
             <CssBaseline />
             <Loader />
             <Navbar />
+            {!isMobile && <SocialMediaBar />}
             <Route path="/" component={HomePage} />
           </ThemeProvider>
         </LoaderContext.Provider>

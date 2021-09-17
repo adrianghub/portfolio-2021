@@ -1,13 +1,9 @@
 import React from "react";
-import { useMediaQuery, useTheme } from "@material-ui/core";
 import { motion } from "framer-motion";
-import HeaderBackground from "../components/HeaderBackground";
 import Home from "../components/Home";
+import About from "../sections/About";
 
 const HomePage = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.up("sm"));
-
   return (
     <motion.main
       initial={{ opacity: 0 }}
@@ -19,11 +15,10 @@ const HomePage = () => {
       }}
     >
       <Home />
-      {/* About */}
+      <About />
       {/* Skills */}
       {/* Projects */}
       {/* Contact */}
-      {isMobile && <HeaderBackground />}
     </motion.main>
   );
 };
