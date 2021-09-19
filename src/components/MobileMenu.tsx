@@ -73,8 +73,8 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ open, onClose }) => {
           <ListItem {...listItemProps} to="about">
             About
           </ListItem>
-          <ListItem {...listItemProps} to="skills">
-            Skills
+          <ListItem {...listItemProps} to="tech-stack">
+            TechStack
           </ListItem>
           <ListItem {...listItemProps} to="projects">
             Projects
@@ -83,6 +83,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ open, onClose }) => {
             Contact
           </ListItem>
           <ListItem className={classes.btnContainer}>
+            {/* @ts-ignore */}
             <Button
               component={MuiLink}
               href="/resume.pdf"

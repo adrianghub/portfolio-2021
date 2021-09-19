@@ -36,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     padding: (props: PaddingProps) =>
       props.isMobile ? theme.spacing(0, 2) : theme.spacing(0, 6),
+    boxShadow: 'none'
   },
 }));
 
@@ -50,8 +51,8 @@ const Navbar = () => {
   const handleNav = () => setScroll(window.scrollY > 30);
   window.addEventListener("scroll", handleNav);
 
-  const appbarVariants = {
-    initial: { height: isMobile ? 70 : 100, boxShadow: theme.shadows[0] },
+  const navbarVariants = {
+    initial: { height: isMobile ? 70 : 100},
     scrolled: { height: theme.navbarHeight, boxShadow: theme.shadows[10] },
   };
 
@@ -82,7 +83,7 @@ const Navbar = () => {
         <Toolbar
           className={classes.toolbar}
           component={motion.div}
-          variants={appbarVariants}
+          variants={navbarVariants}
           animate={scroll ? "scrolled" : "initial"}
           transition={{
             type: "spring",
@@ -90,6 +91,7 @@ const Navbar = () => {
             damping: 20,
           }}
         >
+          {/* @ts-ignore */}
           <Logo className={classes.logo} />
           <Hidden smDown>
             <Menu />
@@ -97,6 +99,7 @@ const Navbar = () => {
           <Hidden mdUp>
             <HamburgerIcon
               isOpen={mobileNavIsOpen}
+              // @ts-ignore
               onClick={() => setMobileNavIsOpen(!mobileNavIsOpen)}
             />
           </Hidden>

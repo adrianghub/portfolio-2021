@@ -61,13 +61,13 @@ const AnimatedLink = React.forwardRef<HTMLAnchorElement, LinkProps>(
     //   @ts-ignore
     <motion.div ref={ref as any} custom={props.custom} animate={props.animate}>
       {/* @ts-ignore */}
-      <Link innerRef={ref as any} {...smoothScrollProps} {...props} />
+      <Link ref={ref as any} {...smoothScrollProps} {...props} />
     </motion.div>
   )
 );
 
 const CustomMuiLink = React.forwardRef<HTMLAnchorElement, LinkProps>(
-  (props, ref) => <MuiLink innerRef={ref as any} {...props} />
+  (props, ref) => <MuiLink ref={ref as any} {...props} />
 );
 
 const Menu = () => {
@@ -121,7 +121,7 @@ const Menu = () => {
         indicatorColor="primary"
         textColor="primary"
         onChange={handleChange}
-        aria-label="disabled tabs example"
+        aria-label="disabled tabs"
       >
         <StyledTab
           // @ts-ignore
@@ -131,15 +131,14 @@ const Menu = () => {
           to="about"
           label="About"
           onSetActive={() => spyHandleChange(0)}
-          onSetInactive={() => spyHandleChange(false)}
         />
         <StyledTab
           // @ts-ignore
           component={AnimatedLink}
           animate={controls}
           custom={1}
-          to="skills"
-          label="skills"
+          to="tech-stack"
+          label="tech stack"
           onSetActive={() => spyHandleChange(1)}
         />
         <StyledTab
@@ -167,7 +166,7 @@ const Menu = () => {
         {/* @ts-ignore */}
         <Button
           component={CustomMuiLink}
-          href="/resume.pdf"
+          href="/"
           variant="outlined"
           color="primary"
           underline="none"

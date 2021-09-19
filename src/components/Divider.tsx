@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { makeStyles } from "@material-ui/core";
+import ThemeContext from "../contexts/theme";
 
 const useStyles = makeStyles(() => ({
-  root: {
+  rootDark: {
     display: "inline",
     // @ts-ignore
     width: (props) => (props.fullWidth ? "100%" : props.width),
     height: "1px",
     backgroundColor: "#93A0D2",
+  },
+  rootLight: {
+    display: "inline",
+    // @ts-ignore
+    width: (props) => (props.fullWidth ? "100%" : props.width),
+    height: "1px",
+    backgroundColor: "#6F4C5B",
   },
 }));
 
@@ -18,7 +26,14 @@ interface DividerProps {
 
 const Divider = ({ fullWidth, width, ...rest }: DividerProps) => {
   const classes = useStyles({ fullWidth, width });
-  return <div className={classes.root} {...rest}></div>;
+  const { isDarkMode } = useContext(ThemeContext);
+
+  return (
+    <div
+      className={isDarkMode ? classes.rootDark : classes.rootLight}
+      {...rest}
+    ></div>
+  );
 };
 
 export default Divider;

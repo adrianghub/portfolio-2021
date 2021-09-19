@@ -10,7 +10,9 @@ import {
 import SectionContainer from "./SectionContainer";
 import ProfilePic from "../components/ProfilePic";
 
-const useStyles = makeStyles((theme) => ({
+import aboutIcon from '../assets/about.svg';
+
+const useStyles = makeStyles(() => ({
   gridItemWrapper: {
     display: "flex",
     justifyContent: "center",
@@ -24,7 +26,7 @@ const About = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <SectionContainer id="about" title="About" maxWidth="md">
+    <SectionContainer id="about" title="About" icon={aboutIcon} maxWidth="md">
       <Grid container spacing={0} alignItems="center" style={{ width: "100%" }}>
         {isMobile && (
           <Grid item xs={12} md={5} className={classes.gridItemWrapper}>

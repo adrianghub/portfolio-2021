@@ -1,16 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { makeStyles, Container, Typography } from "@material-ui/core";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Divider from "../components/Divider";
+import ThemeContext from "../contexts/theme";
 
 interface SectionContainerProps {
-  id: string;
+  id?: string;
   children: any;
   maxWidth: string;
   full?: boolean;
   reverse?: boolean;
   title: string;
+  icon?: string;
   padding?: string;
 }
 
@@ -32,18 +34,37 @@ const useStyles = makeStyles((theme) => ({
     textTransform: "uppercase",
     whiteSpace: "nowrap",
   },
+
+  titleIconWrapper: {
+    display: "flex",
+    alignItems: "center",
+    margin: theme.spacing(0, 4),
+  },
+  titleIcon: {
+    textTransform: "uppercase",
+    whiteSpace: "nowrap",
+    marginRight: ".5rem",
+  },
+  iconBlueFilter: {
+    filter:
+      "invert(40%) sepia(54%) saturate(2329%) hue-rotate(186deg) brightness(100%) contrast(103%)",
+  },
+  iconBrownFilter: {
+    filter:
+      "invert(31%) sepia(9%) saturate(1441%) hue-rotate(282deg) brightness(98%) contrast(89%)",
+  },
   childrenContainer: {
     minHeight: "100%",
   },
 }));
 
 const SectionContainer = ({
-  id,
   children,
   maxWidth,
   full,
   reverse,
   title,
+  icon,
   padding,
   ...rest
 }: SectionContainerProps) => {
@@ -52,6 +73,7 @@ const SectionContainer = ({
   const contentControls = useAnimation();
   const [titleRef, titleInView] = useInView();
   const [contentRef, contentInView] = useInView();
+  const { isDarkMode } = useContext(ThemeContext);
 
   useEffect(() => {
     if (titleInView) {
@@ -85,9 +107,28 @@ const SectionContainer = ({
           className={classes.titleContainer}
         >
           <Divider width="20%" />
-          <Typography variant="h4" color="initial" className={classes.title}>
-            {title}
-          </Typography>
+          {icon ? (
+            <div className={classes.titleIconWrapper}>
+              <Typography
+                variant="h4"
+                color="initial"
+                className={classes.titleIcon}
+              >
+                {title}
+              </Typography>
+              <img
+                src={icon}
+                className={
+                  isDarkMode ? classes.iconBlueFilter : classes.iconBrownFilter
+                }
+                style={{ maxWidth: "40px" }}
+              />
+            </div>
+          ) : (
+            <Typography variant="h4" color="initial" className={classes.title}>
+              {title}
+            </Typography>
+          )}
           <Divider fullWidth />
         </motion.div>
       )}

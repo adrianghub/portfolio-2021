@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Home from "../components/Home";
 import About from "../sections/About";
+import TechStack from "../sections/TechStack";
 
 const HomePage = () => {
   return (
@@ -16,7 +17,7 @@ const HomePage = () => {
     >
       <Home />
       <About />
-      {/* Skills */}
+      <TechStack />
       {/* Projects */}
       {/* Contact */}
     </motion.main>
