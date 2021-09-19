@@ -74,7 +74,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ open, onClose }) => {
             About
           </ListItem>
           <ListItem {...listItemProps} to="tech-stack">
-            TechStack
+            Tech Stack
           </ListItem>
           <ListItem {...listItemProps} to="projects">
             Projects
