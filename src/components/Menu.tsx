@@ -42,20 +42,6 @@ const StyledTab = withStyles((theme) => ({
   },
 }))((props) => <Tab disableRipple {...props} />);
 
-const StyledTabs = withStyles({
-  indicator: {
-    "& > span": {
-      maxWidth: 20,
-    },
-  },
-})((props) => (
-  <Tabs
-    {...props}
-    variant="fullWidth"
-    TabIndicatorProps={{ children: <span /> }}
-  />
-));
-
 const AnimatedLink = React.forwardRef<HTMLAnchorElement, LinkProps>(
   (props, ref) => (
     //   @ts-ignore
@@ -99,6 +85,12 @@ const Menu = () => {
     }
   }, [isLoading, controls]);
 
+  useEffect(() => {
+    if (window.scrollY === 0) {
+      setValue(false);
+    }
+  });
+
   const handleChange = (
     event: any,
     newValue: boolean | ((prevState: boolean) => boolean)
@@ -114,20 +106,23 @@ const Menu = () => {
 
   return (
     <div className={classes.wrapper}>
-      <StyledTabs
+      <Tabs
         // @ts-ignore
         className={classes.tabs}
         value={value}
-        indicatorColor="primary"
         textColor="primary"
         onChange={handleChange}
         aria-label="disabled tabs"
+        TabIndicatorProps={{
+          style: {
+            display: "none",
+          },
+        }}
       >
         <StyledTab
           // @ts-ignore
           component={AnimatedLink}
           custom={0}
-          animate={controls}
           to="about"
           label="About"
           onSetActive={() => spyHandleChange(0)}
@@ -135,7 +130,6 @@ const Menu = () => {
         <StyledTab
           // @ts-ignore
           component={AnimatedLink}
-          animate={controls}
           custom={1}
           to="tech-stack"
           label="tech stack"
@@ -145,7 +139,6 @@ const Menu = () => {
           // @ts-ignore
 
           component={AnimatedLink}
-          animate={controls}
           custom={2}
           to="projects"
           label="projects"
@@ -153,15 +146,13 @@ const Menu = () => {
         />
         <StyledTab
           // @ts-ignore
-
           component={AnimatedLink}
-          animate={controls}
           custom={3}
           to="contact"
           label="contact"
           onSetActive={() => spyHandleChange(3)}
         />
-      </StyledTabs>
+      </Tabs>
       <motion.div custom={4} animate={controls}>
         {/* @ts-ignore */}
         <Button

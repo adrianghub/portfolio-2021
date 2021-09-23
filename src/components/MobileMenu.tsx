@@ -46,7 +46,7 @@ interface MobileMenuProps {
   onClose: () => void;
 }
 
-const MobileMenu: React.FC<MobileMenuProps> = ({ open, onClose }) => {
+const MobileMenu: React.VFC<MobileMenuProps> = ({ open, onClose }) => {
   const classes = useStyles();
   const listItemProps = {
     button: true,

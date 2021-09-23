@@ -52,7 +52,7 @@ const Navbar = () => {
   window.addEventListener("scroll", handleNav);
 
   const navbarVariants = {
-    initial: { height: isMobile ? 70 : 100},
+    initial: { height: isMobile ? 70 : 100, boxShadow: theme.shadows[0]},
     scrolled: { height: theme.navbarHeight, boxShadow: theme.shadows[10] },
   };
 
