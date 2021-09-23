@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Home from "../components/Home";
 import About from "../sections/About";
 import TechStack from "../sections/TechStack";
+import Projects from "../sections/Projects";
 
 const HomePage = () => {
   return (
@@ -18,7 +19,7 @@ const HomePage = () => {
       <Home />
       <About />
       <TechStack />
-      {/* Projects */}
+      <Projects />
       {/* Contact */}
     </motion.main>
   );
