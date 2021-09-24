@@ -1,19 +1,29 @@
 import React, { useEffect, useState } from "react";
-import { useTheme, Grid, makeStyles } from "@material-ui/core";
+import {
+  useTheme,
+  Grid,
+  makeStyles,
+  Card,
+  CardHeader,
+  CardContent,
+  Typography,
+} from "@material-ui/core";
 import SectionContainer from "./SectionContainer";
 import { fetchProjects } from "../api/gh-repos";
 
 const useStyles = makeStyles(() => ({
-  gridItemWrapper: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+  projectContainer: {
+    overflow: "visible",
+    width: "100%",
+    margin: "0 auto",
+  },
+  project: {
+    overflow: "visible",
   },
 }));
 
 const Projects = () => {
   const classes = useStyles();
-  const theme = useTheme();
   const [data, setData] = useState<any>([]);
 
   useEffect(() => {
@@ -34,23 +44,30 @@ const Projects = () => {
 
   const reposInfo = data?.map(
     ({ description, html_url, name, homepage, id }: GithubRepoPros) => {
-      const repoInfo = <p key={id}> {name}</p>;
-      return repoInfo;
+      return (
+        <Grid item xs={12} md={6} className={classes.project}>
+          <Card elevation={10} id={id}>
+            <CardHeader title={name}></CardHeader>
+            <CardContent>
+              <Typography variant="body2">
+                {description ? description : "No description 😥"}
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+      );
     }
   );
 
   return (
     <SectionContainer id="projects" title="Projects" maxWidth="md">
-      <Grid container spacing={0} alignItems="center" style={{ width: "100%" }}>
-        <Grid
-          item
-          xs={12}
-          md={6}
-          className={classes.gridItemWrapper}
-          style={{ flexDirection: "column", alignItems: "space-around" }}
-        >
-          {reposInfo}
-        </Grid>
+      <Grid
+        container
+        spacing={4}
+        alignItems="center"
+        className={classes.projectContainer}
+      >
+        {reposInfo}
       </Grid>
     </SectionContainer>
   );

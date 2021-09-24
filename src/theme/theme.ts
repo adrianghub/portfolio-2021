@@ -38,6 +38,13 @@ const lightTheme = createTheme({
       disabledBackground: "rgb(150,150,150)",
     },
   },
+  overrides: {
+    MuiPaper: {
+      root: {
+        backgroundColor: "#fff",
+      },
+    },
+  },
   ...baseTheme,
 });
 
@@ -61,6 +68,13 @@ const darkTheme = createTheme({
     action: {
       disabled: "rgb(70,70,70)",
       disabledBackground: "rgb(150,150,150)",
+    },
+  },
+  overrides: {
+    MuiPaper: {
+      root: {
+        backgroundColor: "#333",
+      },
     },
   },
   ...baseTheme,
