@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core";
 import { motion, useAnimation } from "framer-motion";
 import loader from "../contexts/loader";
 import { GitHub, LinkedIn, Instagram, Email } from "@material-ui/icons";
-import CustomIconButton from "./IconButton";
+import CustomIconButton from "./CustomIconButton";
 import DarkModeSwitcher from "./DarkModeSwitcher";
 import { socialMedia } from "../data/data";
 

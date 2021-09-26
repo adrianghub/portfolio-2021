@@ -7,9 +7,14 @@ import {
   CardHeader,
   CardContent,
   Typography,
+  IconButton,
+  CardActions,
 } from "@material-ui/core";
 import SectionContainer from "./SectionContainer";
 import { fetchProjects } from "../api/gh-repos";
+import { GitHub, Code, DesktopWindows } from "@material-ui/icons";
+import CustomIconButton from "../components/CustomIconButton";
+import { socialMedia } from "../data/data";
 
 const useStyles = makeStyles(() => ({
   projectContainer: {
@@ -47,12 +52,25 @@ const Projects = () => {
       return (
         <Grid item xs={12} md={6} className={classes.project}>
           <Card elevation={10} id={id}>
-            <CardHeader title={name}></CardHeader>
+            <CardHeader
+              title={name}
+              action={
+                <CustomIconButton
+                  icon={GitHub}
+                  m={1}
+                  href={socialMedia.githubHref}
+                />
+              }
+            />
             <CardContent>
               <Typography variant="body2">
                 {description ? description : "No description 😥"}
               </Typography>
             </CardContent>
+            <CardActions disableSpacing>
+              <CustomIconButton icon={DesktopWindows} m={1} href={homepage} />
+              <CustomIconButton icon={Code} m={1} href={html_url} />
+            </CardActions>
           </Card>
         </Grid>
       );
@@ -63,7 +81,7 @@ const Projects = () => {
     <SectionContainer id="projects" title="Projects" maxWidth="md">
       <Grid
         container
-        spacing={4}
+        spacing={8}
         alignItems="center"
         className={classes.projectContainer}
       >
