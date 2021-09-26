@@ -16,9 +16,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 interface CustomIconButtonProps {
+  m?: number;
   icon: any;
   href: string;
-  fontSize: number;
+  fontSize?: number;
 }
 
 const CustomIconButton = ({
