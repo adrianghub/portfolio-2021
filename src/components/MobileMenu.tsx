@@ -91,6 +91,7 @@ const MobileMenu: React.VFC<MobileMenuProps> = ({ open, onClose }) => {
               variant="outlined"
               color="primary"
               underline="none"
+              target="_blank"
             >
               Resume
             </Button>

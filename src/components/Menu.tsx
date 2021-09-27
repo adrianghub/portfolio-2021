@@ -42,15 +42,12 @@ const StyledTab = withStyles((theme) => ({
   },
 }))((props) => <Tab disableRipple {...props} />);
 
-const AnimatedLink = React.forwardRef<HTMLAnchorElement, LinkProps>(
-  (props, ref) => (
-    //   @ts-ignore
-    <motion.div ref={ref as any} custom={props.custom} animate={props.animate}>
-      {/* @ts-ignore */}
-      <Link ref={ref as any} {...smoothScrollProps} {...props} />
-    </motion.div>
-  )
-);
+const AnimatedLink = React.forwardRef<HTMLAnchorElement, any>((props, ref) => (
+  <motion.div ref={ref as any} custom={props.custom} animate={props.animate}>
+    {/* @ts-ignore */}
+    <Link ref={ref as any} {...smoothScrollProps} {...props} />
+  </motion.div>
+));
 
 const CustomMuiLink = React.forwardRef<HTMLAnchorElement, LinkProps>(
   (props, ref) => <MuiLink ref={ref as any} {...props} />
@@ -58,7 +55,7 @@ const CustomMuiLink = React.forwardRef<HTMLAnchorElement, LinkProps>(
 
 const Menu = () => {
   const classes = useStyles();
-  const [value, setValue] = useState(false);
+  const [value, setValue] = useState<boolean | number>(false);
   const [isScrolling, setIsScrolling] = useState(false);
   const { isLoading } = useContext(LoaderContext);
   const controls = useAnimation();
@@ -91,14 +88,11 @@ const Menu = () => {
     }
   });
 
-  const handleChange = (
-    event: any,
-    newValue: boolean | ((prevState: boolean) => boolean)
-  ) => {
+  const handleChange = (event: any, newValue: boolean | number) => {
     setValue(newValue);
   };
 
-  const spyHandleChange = (index: any) => {
+  const spyHandleChange = (index: boolean | number) => {
     if (!isScrolling) {
       setValue(index);
     }
@@ -107,7 +101,6 @@ const Menu = () => {
   return (
     <div className={classes.wrapper}>
       <Tabs
-        // @ts-ignore
         className={classes.tabs}
         value={value}
         textColor="primary"
@@ -157,10 +150,11 @@ const Menu = () => {
         {/* @ts-ignore */}
         <Button
           component={CustomMuiLink}
-          href="/"
+          href="/resume.pdf"
           variant="outlined"
           color="primary"
           underline="none"
+          target="_blank"
         >
           Resume
         </Button>
