@@ -150,7 +150,7 @@ const Menu = () => {
         {/* @ts-ignore */}
         <Button
           component={CustomMuiLink}
-          href="/resume.pdf"
+          href="/assets/resume.pdf"
           variant="outlined"
           color="primary"
           underline="none"

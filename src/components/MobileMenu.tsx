@@ -87,7 +87,7 @@ const MobileMenu: React.VFC<MobileMenuProps> = ({ open, onClose }) => {
             {/* @ts-ignore */}
             <Button
               component={MuiLink}
-              href="/resume.pdf"
+              href="/assets/resume.pdf"
               variant="outlined"
               color="primary"
               underline="none"
