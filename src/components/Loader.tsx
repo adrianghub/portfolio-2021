@@ -25,7 +25,7 @@ const LoaderContainer = () => {
       }}
       className={classes.container}
     >
-      <img src={logoIcon} />
+      <img width="300" src={logoIcon} />
     </motion.div>
   );
 };
