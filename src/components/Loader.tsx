@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { makeStyles } from "@material-ui/core";
 import { motion } from "framer-motion";
-import Intro from "../assets/IntroDot";
 import LoaderContext from "../contexts/loader";
 import zIndex from "@material-ui/core/styles/zIndex";
+import logoIcon from "../assets/logo-icon.svg";
 
 const LoaderContainer = () => {
   const { setIsLoading } = useContext(LoaderContext);
@@ -11,13 +11,13 @@ const LoaderContainer = () => {
   return (
     <motion.div
       initial={{
-        x: 0,
+        y: 0,
       }}
       animate={{
-        x: "-100vw",
+        y: "-100vh",
       }}
       transition={{
-        delay: 4.2,
+        delay: 2.2,
         duration: 0.3,
       }}
       onAnimationComplete={() => {
@@ -25,7 +25,7 @@ const LoaderContainer = () => {
       }}
       className={classes.container}
     >
-      <Intro />
+      <img src={logoIcon} />
     </motion.div>
   );
 };
