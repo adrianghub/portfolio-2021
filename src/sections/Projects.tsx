@@ -16,6 +16,9 @@ import { GitHub, Code, DesktopWindows } from "@material-ui/icons";
 import CustomIconButton from "../components/CustomIconButton";
 import { socialMedia } from "../data/data";
 
+import projectsIcon from '../assets/projects.svg';
+
+
 const useStyles = makeStyles(() => ({
   projectContainer: {
     overflow: "visible",
@@ -50,8 +53,8 @@ const Projects = () => {
   const reposInfo = data?.map(
     ({ description, html_url, name, homepage, id }: GithubRepoPros) => {
       return (
-        <Grid item xs={12} md={6} className={classes.project}>
-          <Card elevation={10} id={id}>
+        <Grid item xs={12} md={6} id={id} className={classes.project}>
+          <Card elevation={10}>
             <CardHeader
               title={name}
               action={
@@ -78,7 +81,7 @@ const Projects = () => {
   );
 
   return (
-    <SectionContainer id="projects" title="Projects" maxWidth="md">
+    <SectionContainer id="projects" title="Projects" icon={projectsIcon} maxWidth="md">
       <Grid
         container
         spacing={8}

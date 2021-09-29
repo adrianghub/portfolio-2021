@@ -4,6 +4,7 @@ import Home from "../components/Home";
 import About from "../sections/About";
 import TechStack from "../sections/TechStack";
 import Projects from "../sections/Projects";
+import Experience from "../sections/Experience";
 
 const HomePage = () => {
   return (
@@ -18,6 +19,7 @@ const HomePage = () => {
     >
       <Home />
       <About />
+      <Experience />
       <TechStack />
       <Projects />
       {/* Contact */}

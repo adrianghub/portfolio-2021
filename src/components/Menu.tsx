@@ -137,13 +137,22 @@ const Menu = () => {
           label="projects"
           onSetActive={() => spyHandleChange(2)}
         />
+         <StyledTab
+          // @ts-ignore
+
+          component={AnimatedLink}
+          custom={3}
+          to="experience"
+          label="experience"
+          onSetActive={() => spyHandleChange(3)}
+        />
         <StyledTab
           // @ts-ignore
           component={AnimatedLink}
-          custom={3}
+          custom={4}
           to="contact"
           label="contact"
-          onSetActive={() => spyHandleChange(3)}
+          onSetActive={() => spyHandleChange(4)}
         />
       </Tabs>
       <motion.div custom={4} animate={controls}>

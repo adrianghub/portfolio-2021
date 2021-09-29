@@ -10,7 +10,6 @@ import {
 } from "@material-ui/core";
 import { Link } from "react-scroll";
 import DarkModeSwitcher from "./DarkModeSwitcher";
-import CustomListItem from "./CustomListItem";
 
 const useStyles = makeStyles((theme) => ({
   drawer: {
@@ -71,19 +70,27 @@ const MobileMenu: React.VFC<MobileMenuProps> = ({ open, onClose }) => {
     >
       <div className={classes.list} role="presentation">
         <List className={classes.fullList}>
-          <CustomListItem {...listItemProps} href="about">
+          {/* @ts-ignore */}
+          <ListItem {...listItemProps} to="about">
             About
-          </CustomListItem>
-          <CustomListItem {...listItemProps} href="tech-stack">
+          </ListItem>
+          {/* @ts-ignore */}
+          <ListItem {...listItemProps} to="tech-stack">
             Tech Stack
-          </CustomListItem>
-          <CustomListItem {...listItemProps} href="projects">
+          </ListItem>
+          {/* @ts-ignore */}
+          <ListItem {...listItemProps} to="experience">
+            Experience
+          </ListItem>
+          {/* @ts-ignore */}
+          <ListItem {...listItemProps} to="projects">
             Projects
-          </CustomListItem>
-          <CustomListItem {...listItemProps} href="contact">
+          </ListItem>
+          {/* @ts-ignore */}
+          <ListItem {...listItemProps} to="contact">
             Contact
-          </CustomListItem>
-          <CustomListItem className={classes.btnContainer}>
+          </ListItem>
+          <ListItem className={classes.btnContainer}>
             {/* @ts-ignore */}
             <Button
               component={MuiLink}
@@ -95,7 +102,7 @@ const MobileMenu: React.VFC<MobileMenuProps> = ({ open, onClose }) => {
             >
               Resume
             </Button>
-          </CustomListItem>
+          </ListItem>
           <ListItem className={classes.btnContainer}>
             <DarkModeSwitcher onClose={onClose} />
           </ListItem>
