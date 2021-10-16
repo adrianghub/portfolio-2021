@@ -45,6 +45,7 @@ interface JobExperience {
   period: string;
   company: string;
   overview: string;
+  techStack: string;
   website: string;
 }
 
