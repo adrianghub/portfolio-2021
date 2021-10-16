@@ -53,7 +53,7 @@ const Projects = () => {
   const reposInfo = data?.map(
     ({ description, html_url, name, homepage, id }: GithubRepoPros) => {
       return (
-        <Grid item xs={12} md={6} id={id} className={classes.project}>
+        <Grid item xs={12} md={6} key={id} className={classes.project}>
           <Card elevation={10}>
             <CardHeader
               title={name}
