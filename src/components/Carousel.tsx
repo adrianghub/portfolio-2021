@@ -64,9 +64,6 @@ const Carousel = () => {
         <div>
           <img className={classes.img} src={gitBadge} />
         </div>
-        <div>
-          <img className={classes.img} src={javaBadge} />
-        </div>
       </Slider>
     </div>
   );
