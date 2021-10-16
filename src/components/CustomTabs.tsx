@@ -89,9 +89,14 @@ const CustomTabs = () => {
               {elem.period}
             </Typography>
           </Box>
-          <Box mb={4}>
+          <Box mb={2}>
             <Typography variant="body1" color="textPrimary">
               {elem.overview}
+            </Typography>
+          </Box>
+          <Box mb={4}>
+            <Typography variant="body1" color="textPrimary">
+              Tech Stack: <b>{elem.techStack}</b>
             </Typography>
           </Box>
           <Box>

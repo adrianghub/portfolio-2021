@@ -10,7 +10,7 @@ import {
 import SectionContainer from "./SectionContainer";
 import ProfilePic from "../components/ProfilePic";
 
-import aboutIcon from '../assets/about.svg';
+import aboutIcon from "../assets/about.svg";
 
 const useStyles = makeStyles(() => ({
   gridItemWrapper: {
@@ -45,13 +45,9 @@ const About = () => {
           <Box mb={3}>
             <Typography variant="h6">
               <i>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Repellat architecto quis similique aspernatur laboriosam iusto,
-                harum ab labore amet nemo illum molestiae ratione delectus
-                ipsum. In nam itaque quibusdam, cumque iusto deleniti soluta
-                error, perferendis quaerat consequuntur quae fugit dolor ipsa
-                voluptatem. Repudiandae maiores ratione suscipit at! Accusamus,
-                neque vitae.
+                Some people say we love to talk about ourselves. I enjoy doing
+                rather than talking. Let the results of my work speak for
+                themselves. There is always room for improvement.
               </i>
             </Typography>
           </Box>
