@@ -1,5 +1,11 @@
 import React, { useContext, useEffect } from "react";
-import { makeStyles, Container, Typography } from "@material-ui/core";
+import {
+  makeStyles,
+  Container,
+  Typography,
+  useTheme,
+  useMediaQuery,
+} from "@material-ui/core";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Divider from "../components/Divider";
@@ -74,6 +80,8 @@ const SectionContainer = ({
   const [titleRef, titleInView] = useInView();
   const [contentRef, contentInView] = useInView();
   const { isDarkMode } = useContext(ThemeContext);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
 
   useEffect(() => {
     if (titleInView) {
@@ -106,7 +114,7 @@ const SectionContainer = ({
           }}
           className={classes.titleContainer}
         >
-          <Divider width="20%" />
+          {!isMobile && <Divider width="20%" />}
           {icon ? (
             <div className={classes.titleIconWrapper}>
               <Typography
@@ -121,7 +129,7 @@ const SectionContainer = ({
                 className={
                   isDarkMode ? classes.iconBlueFilter : classes.iconBrownFilter
                 }
-                style={{ maxWidth: "40px" }}
+                style={{ maxWidth: "40px", marginRight: "20px" }}
               />
             </div>
           ) : (
@@ -129,7 +137,7 @@ const SectionContainer = ({
               {title}
             </Typography>
           )}
-          <Divider fullWidth />
+          {!isMobile && <Divider fullWidth />}
         </motion.div>
       )}
       <motion.div

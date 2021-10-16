@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
 import {
-  useTheme,
   Grid,
   makeStyles,
   Card,
   CardHeader,
   CardContent,
   Typography,
-  IconButton,
   CardActions,
 } from "@material-ui/core";
 import SectionContainer from "./SectionContainer";
@@ -16,17 +14,17 @@ import { GitHub, Code, DesktopWindows } from "@material-ui/icons";
 import CustomIconButton from "../components/CustomIconButton";
 import { socialMedia } from "../data/data";
 
-import projectsIcon from '../assets/projects.svg';
-
+import projectsIcon from "../assets/projects.svg";
 
 const useStyles = makeStyles(() => ({
   projectContainer: {
-    overflow: "visible",
     width: "100%",
     margin: "0 auto",
   },
   project: {
-    overflow: "visible",
+    "&:hover": {
+      boxShadow: "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)",
+    },
   },
 }));
 
@@ -53,8 +51,8 @@ const Projects = () => {
   const reposInfo = data?.map(
     ({ description, html_url, name, homepage, id }: GithubRepoPros) => {
       return (
-        <Grid item xs={12} md={6} key={id} className={classes.project}>
-          <Card elevation={10}>
+        <Grid item xs={12} md={6} key={id}>
+          <Card elevation={8} className={classes.project}>
             <CardHeader
               title={name}
               action={
@@ -81,7 +79,12 @@ const Projects = () => {
   );
 
   return (
-    <SectionContainer id="projects" title="Projects" icon={projectsIcon} maxWidth="md">
+    <SectionContainer
+      id="projects"
+      title="Projects"
+      icon={projectsIcon}
+      maxWidth="md"
+    >
       <Grid
         container
         spacing={8}
