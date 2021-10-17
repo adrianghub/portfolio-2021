@@ -75,12 +75,12 @@ const MobileMenu: React.VFC<MobileMenuProps> = ({ open, onClose }) => {
             About
           </ListItem>
           {/* @ts-ignore */}
-          <ListItem {...listItemProps} to="tech-stack">
-            Tech Stack
-          </ListItem>
-          {/* @ts-ignore */}
           <ListItem {...listItemProps} to="experience">
             Experience
+          </ListItem>
+          {/* @ts-ignore */}
+          <ListItem {...listItemProps} to="tech-stack">
+            Tech Stack
           </ListItem>
           {/* @ts-ignore */}
           <ListItem {...listItemProps} to="projects">

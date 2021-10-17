@@ -54,7 +54,7 @@ const ContactForm = () => {
       name: Yup.string().required("Name is required."),
       email: Yup.string()
         .email("Email address is invalid.")
-        .required("Email address is required"),
+        .required("Email address is required."),
       message: Yup.string().required(
         "It is required to fill out message field."
       ),

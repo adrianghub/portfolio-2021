@@ -124,27 +124,25 @@ const Menu = () => {
           // @ts-ignore
           component={AnimatedLink}
           custom={1}
+          to="experience"
+          label="experience"
+          onSetActive={() => spyHandleChange(3)}
+        />
+        <StyledTab
+          // @ts-ignore
+          component={AnimatedLink}
+          custom={2}
           to="tech-stack"
           label="tech stack"
           onSetActive={() => spyHandleChange(1)}
         />
         <StyledTab
           // @ts-ignore
-
           component={AnimatedLink}
-          custom={2}
+          custom={3}
           to="projects"
           label="projects"
           onSetActive={() => spyHandleChange(2)}
-        />
-         <StyledTab
-          // @ts-ignore
-
-          component={AnimatedLink}
-          custom={3}
-          to="experience"
-          label="experience"
-          onSetActive={() => spyHandleChange(3)}
         />
         <StyledTab
           // @ts-ignore
