@@ -45,8 +45,8 @@ const jobsExperience = [
     period: "11/2021 - Present",
     company: "Billennium",
     overview: "In progress...",
-    techStack: "JavaScript, Typescript, React, Node, Git, Gitlab",
-    website: "https://www.ardentcode.com",
+    techStack: "JavaScript, Typescript, React, Angular, Node, Git, Gitlab",
+    website: "https://billennium.pl",
   },
 ];
 

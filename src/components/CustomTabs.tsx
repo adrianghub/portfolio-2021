@@ -49,7 +49,7 @@ interface JobExperience {
   website: string;
 }
 
-let initialIndex = jobsExperience.length - 1;
+let initialIndex = jobsExperience.length - 2;
 
 const CustomTabs = () => {
   const theme = useTheme();
