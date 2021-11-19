@@ -33,8 +33,17 @@ const jobsExperience = [
   {
     id: 2,
     position: "Junior JavaScript Developer",
-    period: "06/2021 - Present",
+    period: "06/2021 - 11/2021",
     company: "ArdentCode",
+    overview: "I was responsible for tests coverage for React components/utils/services. With a group of 4 teammates I created MVP app (PWA) suited entirely for mobile devices (tech stack: React/TS/Node). I integrated measurments from Garmin devices with company's private app. Integration consists of Garmin oauth and .fitfile conversion. There were also bugs to fix as well as some components features.",
+    techStack: "JavaScript, Typescript, React, Node, Git, Gitlab",
+    website: "https://www.ardentcode.com",
+  },
+  {
+    id: 3,
+    position: "Frontend Developer",
+    period: "11/2021 - Present",
+    company: "Billennium",
     overview: "In progress...",
     techStack: "JavaScript, Typescript, React, Node, Git, Gitlab",
     website: "https://www.ardentcode.com",
