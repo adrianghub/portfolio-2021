@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 import SectionContainer from "./SectionContainer";
 import { fetchProjects } from "../api/gh-repos";
-import { GitHub, Code, DesktopWindows } from "@material-ui/icons";
+import { GitHub, Code, DesktopWindows,  } from "@material-ui/icons";
 import CustomIconButton from "../components/CustomIconButton";
 import { socialMedia } from "../data/data";
 
@@ -26,6 +26,12 @@ const useStyles = makeStyles(() => ({
       boxShadow: "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)",
     },
   },
+  codeLanguage: {
+    position: 'absolute', 
+    top: '15px', 
+    left: '100px', 
+    margin: "4px 8px"
+  }
 }));
 
 const Projects = () => {
@@ -41,20 +47,24 @@ const Projects = () => {
   }, []);
 
   interface GithubRepoPros {
-    description: string;
-    html_url: string;
-    name: string;
-    homepage: string;
-    id: string;
+    description: string; 
+    image: string; 
+    language: string;
+    languageColor: string; 
+    link: string;
+    repo: string;
+    website: string;
   }
 
+  console.log(data);
+
   const reposInfo = data?.map(
-    ({ description, html_url, name, homepage, id }: GithubRepoPros) => {
+    ({ description, image, language, languageColor, link, repo, website }: GithubRepoPros, id: string) => {
       return (
-        <Grid item xs={12} md={6} key={id}>
+        <Grid item xs={12} key={id}>
           <Card elevation={8} className={classes.project}>
             <CardHeader
-              title={name}
+              title={repo}
               action={
                 <CustomIconButton
                   icon={GitHub}
@@ -68,9 +78,10 @@ const Projects = () => {
                 {description ? description : "No description 😥"}
               </Typography>
             </CardContent>
-            <CardActions disableSpacing>
-              <CustomIconButton icon={DesktopWindows} m={1} href={homepage} />
-              <CustomIconButton icon={Code} m={1} href={html_url} />
+            <CardActions disableSpacing style={{ position: 'relative' }}>
+              <CustomIconButton icon={DesktopWindows} m={1} href={website} />
+              <CustomIconButton icon={Code} m={1} href={link} />
+                <p className={classes.codeLanguage} style={{ color: languageColor }}>{language}</p>
             </CardActions>
           </Card>
         </Grid>

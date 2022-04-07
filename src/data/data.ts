@@ -16,7 +16,7 @@ const jobsExperience = [
       "My responsibilities was spread between unit tests, new components implementation and code refactoring. " +
       "I was working in team of around 10 people.",
     techStack:
-      "JavaScript, Handlebars, React, Jest/Enzyme, Jira, Git, Bitbucket",
+      "JavaScript, Handlebars, React, Jest/Enzyme, Flutter, Jira, Git, Bitbucket",
     website: "https://www.allegro.pl",
   },
   {
@@ -42,11 +42,20 @@ const jobsExperience = [
   {
     id: 3,
     position: "Frontend Developer",
-    period: "11/2021 - Present",
+    period: "11/2021 - 01/2022",
     company: "Billennium",
-    overview: "In progress...",
-    techStack: "JavaScript, Typescript, React, Angular, Node, Git, Gitlab",
+    overview: "I've joined Germany startup for a 6 weeks sprint to support team working on UNICEF website.",
+    techStack: "JavaScript, Typescript, React, Node, Git, Gitlab",
     website: "https://billennium.pl",
+  },
+  {
+    id: 4,
+    position: "JavaScript Developer",
+    period: "01/2022 - Present",
+    company: "Boldare",
+    overview: "In progress...",
+    techStack: "JavaScript, Typescript, React, RxJS, Gatsby, Redux Toolkit, Git, GitHub",
+    website: "https://boldare.com",
   },
 ];
 

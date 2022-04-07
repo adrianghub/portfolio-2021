@@ -1,7 +1,8 @@
 import axios from "axios"
 
+const GH_USERNAME = "adrianghub";
 const ENDPOINT =
-  "https://api.github.com/users/adrianghub/repos?sort=updated&direction=desc&per_page=6"
+  `https://gh-pinned-repos.egoist.sh/?username=${GH_USERNAME}`
 
 export async function fetchProjects() {
   try {
@@ -9,6 +10,6 @@ export async function fetchProjects() {
 
     return response
   } catch (error) {
-    console.log(error)
+    console.error("There is some issue with the API. Check it first.")
   }
 }

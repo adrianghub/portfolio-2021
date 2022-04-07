@@ -13,7 +13,7 @@ const TechStack = () => {
       icon={stackIcon}
       maxWidth="md"
     >
-     <Carousel />
+      <Carousel />
     </SectionContainer>
   );
 };
