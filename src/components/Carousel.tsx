@@ -6,7 +6,6 @@ import reactBadge from "../assets/react-badge.png";
 import nodeBadge from "../assets/node-badge.png";
 import tsBadge from "../assets/ts-badge.png";
 import gitBadge from "../assets/git-badge.png";
-import javaBadge from "../assets/java-badge.png";
 import { makeStyles } from "@material-ui/styles";
 
 const useStyles = makeStyles(() => ({
