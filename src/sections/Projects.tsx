@@ -10,16 +10,21 @@ import {
 } from "@material-ui/core";
 import SectionContainer from "./SectionContainer";
 import { fetchProjects } from "../api/gh-repos";
-import { GitHub, Code, DesktopWindows,  } from "@material-ui/icons";
+import { GitHub, Code, DesktopWindows } from "@material-ui/icons";
 import CustomIconButton from "../components/CustomIconButton";
-import { socialMedia } from "../data/data";
+import { socialMedia } from "../data";
 
 import projectsIcon from "../assets/projects.svg";
+import ProjectCards from "../components/ProjectCards";
 
 const useStyles = makeStyles(() => ({
-  projectContainer: {
+  commercialProjectsContainer: {
+    padding: "8rem 2rem 10rem",
+  },
+  personalProjectsContainer: {
     width: "100%",
     margin: "0 auto",
+    padding: "6rem 0 3rem",
   },
   project: {
     "&:hover": {
@@ -27,11 +32,11 @@ const useStyles = makeStyles(() => ({
     },
   },
   codeLanguage: {
-    position: 'absolute', 
-    top: '15px', 
-    left: '100px', 
-    margin: "4px 8px"
-  }
+    position: "absolute",
+    top: "15px",
+    left: "100px",
+    margin: "4px 8px",
+  },
 }));
 
 const Projects = () => {
@@ -47,19 +52,27 @@ const Projects = () => {
   }, []);
 
   interface GithubRepoPros {
-    description: string; 
-    image: string; 
+    description: string;
+    image: string;
     language: string;
-    languageColor: string; 
+    languageColor: string;
     link: string;
     repo: string;
     website: string;
   }
 
-  console.log(data);
-
   const reposInfo = data?.map(
-    ({ description, image, language, languageColor, link, repo, website }: GithubRepoPros, id: string) => {
+    (
+      {
+        description,
+        language,
+        languageColor,
+        link,
+        repo,
+        website,
+      }: GithubRepoPros,
+      id: string
+    ) => {
       return (
         <Grid item xs={12} key={id}>
           <Card elevation={8} className={classes.project}>
@@ -78,10 +91,15 @@ const Projects = () => {
                 {description ? description : "No description 😥"}
               </Typography>
             </CardContent>
-            <CardActions disableSpacing style={{ position: 'relative' }}>
+            <CardActions disableSpacing style={{ position: "relative" }}>
               <CustomIconButton icon={DesktopWindows} m={1} href={website} />
               <CustomIconButton icon={Code} m={1} href={link} />
-                <p className={classes.codeLanguage} style={{ color: languageColor }}>{language}</p>
+              <p
+                className={classes.codeLanguage}
+                style={{ color: languageColor }}
+              >
+                {language}
+              </p>
             </CardActions>
           </Card>
         </Grid>
@@ -96,11 +114,26 @@ const Projects = () => {
       icon={projectsIcon}
       maxWidth="md"
     >
+      <Typography align="center" variant="h5" component="h3">
+        Featured Commercial Projects
+      </Typography>
+      <Grid
+        container
+        spacing={2}
+        justifyContent="space-between"
+        className={classes.commercialProjectsContainer}
+      >
+        <ProjectCards />
+      </Grid>
+
+      <Typography align="center" variant="h5" component="h3">
+        Featured Personal Projects
+      </Typography>
       <Grid
         container
         spacing={8}
         alignItems="center"
-        className={classes.projectContainer}
+        className={classes.personalProjectsContainer}
       >
         {reposInfo}
       </Grid>
