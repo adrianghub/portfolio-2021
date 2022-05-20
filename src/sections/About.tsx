@@ -30,9 +30,9 @@ const About = () => {
       <Grid container spacing={0} alignItems="center" style={{ width: "100%" }}>
         {isMobile && (
           <Grid item xs={12} md={5} className={classes.gridItemWrapper}>
-            <Box mb={6}>
+            <div style={{ marginBottom: "4rem" }}>
               <ProfilePic />
-            </Box>
+            </div>
           </Grid>
         )}
         <Grid
@@ -42,7 +42,7 @@ const About = () => {
           className={classes.gridItemWrapper}
           style={{ flexDirection: "column", alignItems: "space-around" }}
         >
-          <Box mb={3}>
+          <div style={{ marginBottom: "2rem" }}>
             <Typography variant="h6">
               <i>
                 Some people say we love to talk about ourselves. I enjoy doing
@@ -50,7 +50,7 @@ const About = () => {
                 themselves. There is always room for improvement.
               </i>
             </Typography>
-          </Box>
+          </div>
         </Grid>
         {!isMobile && (
           <Grid item xs={12} md={5} className={classes.gridItemWrapper}>

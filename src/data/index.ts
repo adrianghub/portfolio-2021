@@ -35,7 +35,8 @@ const jobsExperience = [
     position: "Junior JavaScript Developer",
     period: "06/2021 - 11/2021",
     company: "ArdentCode",
-    overview: "I was responsible for tests coverage for React components/utils/services. With a group of 4 teammates I created MVP app (PWA) suited entirely for mobile devices (tech stack: React/TS/Node). I integrated measurments from Garmin devices with company's private app. Integration consists of Garmin oauth and .fitfile conversion. There were also bugs to fix as well as some components features.",
+    overview:
+      "I was responsible for tests coverage for React components/utils/services. With a group of 4 teammates I created MVP app (PWA) suited entirely for mobile devices (tech stack: React/TS/Node). I integrated measurments from Garmin devices with company's private app. Integration consists of Garmin oauth and .fitfile conversion. There were also bugs to fix as well as some components features.",
     techStack: "JavaScript, Typescript, React, Node, Git, Gitlab",
     website: "https://www.ardentcode.com",
   },
@@ -44,7 +45,8 @@ const jobsExperience = [
     position: "Frontend Developer",
     period: "11/2021 - 01/2022",
     company: "Billennium",
-    overview: "I've joined Germany startup for a 6 weeks sprint to support team working on UNICEF website.",
+    overview:
+      "I've joined Germany startup for a 6 weeks sprint to support team working on UNICEF website.",
     techStack: "JavaScript, Typescript, React, Node, Git, Gitlab",
     website: "https://billennium.pl",
   },
@@ -54,9 +56,34 @@ const jobsExperience = [
     period: "01/2022 - Present",
     company: "Boldare",
     overview: "In progress...",
-    techStack: "JavaScript, Typescript, React, RxJS, Gatsby, Redux Toolkit, Git, GitHub",
+    techStack:
+      "JavaScript, Typescript, React, RxJS, Gatsby, Redux Toolkit, Git, GitHub",
     website: "https://boldare.com",
   },
 ];
 
-export { socialMedia, jobsExperience };
+const projectCards = [
+  {
+    id: "1",
+    title: "Akuity Website",
+    link: "https://akuity.io",
+    subtitle: "",
+    image: "",
+  },
+  {
+    id: "2",
+    title: "Sharpslide App",
+    link: "https://app.sharpslide.com",
+    subtitle: "",
+    image: "",
+  },
+  {
+    id: "3",
+    title: "Comming soon",
+    link: "",
+    subtitle: "",
+    image: "",
+  },
+];
+
+export { socialMedia, jobsExperience, projectCards };

@@ -10,7 +10,7 @@ import {
   useMediaQuery,
   Theme,
 } from "@material-ui/core";
-import { jobsExperience } from "../data/data";
+import { jobsExperience } from "../data";
 import CustomIconButton from "./CustomIconButton";
 import { Language } from "@material-ui/icons";
 

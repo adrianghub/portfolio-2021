@@ -6,7 +6,7 @@ import loader from "../contexts/loader";
 import { GitHub, LinkedIn, Instagram, Email } from "@material-ui/icons";
 import CustomIconButton from "./CustomIconButton";
 import DarkModeSwitcher from "./DarkModeSwitcher";
-import { socialMedia } from "../data/data";
+import { socialMedia } from "../data";
 
 const useStyles = makeStyles((theme) => ({
   wrapper: {
